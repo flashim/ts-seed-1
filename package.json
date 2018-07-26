@@ -1,0 +1,24 @@
+{
+  "name": "tsproj",
+  "version": "1.0.0",
+  "description": "seed",
+  "main": "./src/main.js",
+  "scripts": {
+    "serve": "http-server",
+    "copy-js:w": "babel ./src/main.js --watch --out-file ./public/app.js",
+    "tsc:w": "tsc ./src/main.ts --watch --out ./public/app.js",
+    "start_old1": "tsc ./src/main.ts && node ./src/main.js",
+    "start_old2": "concurrent \"npm run tsc:w\" \"npm run copy-js:w\" \"npm run serve\" ",
+    "start": "concurrent \"npm run tsc:w\" \"npm run serve\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "flashim@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "concurrently": "^3.5.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0-beta.2"
+  }
+}
